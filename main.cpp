@@ -33,7 +33,6 @@ void check(int x)
 
 int draw()
 {
-    system("clear");
     for(int i = 0; i<9; i++)
     {
         if(i<2)
@@ -55,10 +54,10 @@ int draw()
                 if(tab[j][i]==1)
                 {
                 cout<<"| X |";
-                }else 
+                }else
                 cout<<"| O |";
             }
-            else 
+            else
             cout<<"|   |";
         } cout<<endl;
     }
@@ -148,7 +147,6 @@ int p_choice()
 
 int main()
 {
-    system("CLS");
     cout<<"WELCOME IN CONNECT 4"<<endl;
     draw();
     p_choice();
