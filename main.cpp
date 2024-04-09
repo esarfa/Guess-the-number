@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <unistd.h>
-
+using namespace std;
 int tab[7][6];
 int choice, player;
 bool end = false;
@@ -25,7 +25,7 @@ void check(int x)
             }
         else
         {
-        std::cout << "WRONG!" << std::endl;
+        cout << "WRONG!" << endl;
         a=0;
         player++;
         }
@@ -38,12 +38,12 @@ int draw()
     {
         if(i<2)
         {
-        std::cout<<"-";
+        cout<<"-";
         } else if(i>7)
         {
-        std::cout<<i-1<<"--"<<std::endl;
+        cout<<i-1<<"--"<< endl;
         } else {
-        std::cout<<i-1<<"----";
+        cout<<i-1<<"----";
         }
     }
     for(int i = 0; i<6; i++)
@@ -54,16 +54,18 @@ int draw()
             {
                 if(tab[j][i]==1)
                 {
-                std::cout<<"| X |";
-                }else std::cout<<"| O |";
+                cout<<"| X |";
+                }else 
+                cout<<"| O |";
             }
-            else std::cout<<"|   |";
-        } std::cout<<std::endl;
+            else 
+            cout<<"|   |";
+        } cout<<endl;
     }
     for(int i = 0; i<35; i++)
     {
         std::cout<<"=";
-    } std::cout<<std::endl;
+    } cout<<endl;
 }
 
 int win_check()
@@ -75,41 +77,41 @@ int win_check()
         if(tab[j][i]==1 && tab[j+1][i+1]==1 && tab[j+2][i+2]==1 && tab[j+3][i+3]==1)
             {
             end = true;
-            std::cout << "\nPLAYER 1 WIN!" << std::endl;
+            cout << "\nPLAYER 1 WIN!" << endl;
             }
         if(tab[j][i]==1 && tab[j+1][i-1]==1 && tab[j+2][i-2]==1 && tab[j+3][i-3]==1)
             {
-            std::cout << "\nPLAYER 1 WIN!" << std::endl;
+            cout << "\nPLAYER 1 WIN!" << endl;
             end = true;
             }
         if(tab[j][i]==2 && tab[j+1][i-1]==2 && tab[j+2][i-2]==2 && tab[j+3][i-3]==2)
             {
-            std::cout << "\nPLAYER 2 WIN!" << std::endl;
+            cout << "\nPLAYER 2 WIN!" << std::endl;
             end=true;
             }
         else if(tab[j][i]==2 && tab[j-1][i-1]==2 && tab[j-2][i-2]==2 && tab[j-3][i-3]==2)
             {
             end = true;
-            std::cout << "\nPLAYER 2 WIN!" << std::endl;
+            cout << "\nPLAYER 2 WIN!" << endl;
             }
         else if(tab[j][i]==1 && tab[j][i-1]==1 && tab[j][i-2]==1 && tab[j][i-3]==1)
             {
-            std::cout << "\nPLAYER 1 WIN!" << std::endl;
+            cout << "\nPLAYER 1 WIN!" << endl;
             end = true;
             }
         else if(tab[j][i]==1 && tab[j-1][i]==1 && tab[j-2][i]==1 && tab[j-3][i]==1)
             {
-            std::cout << "\nPLAYER 1 WIN!" << std::endl;
+            cout << "\nPLAYER 1 WIN!" << endl;
             end = true;
             }
         else if(tab[j][i]==2 && tab[j][i-1]==2 && tab[j][i-2]==2 && tab[j][i-3]==2)
             {
-            std::cout << "\nPLAYER 2 WIN!" << std::endl;
+            cout << "\nPLAYER 2 WIN!" << endl;
             end = true;
             }
         else if(tab[j][i]==2 && tab[j-1][i]==2 && tab[j-2][i]==2 && tab[j-3][i]==2)
             {
-            std::cout << "\nPLAYER 2 WIN!" << std::endl;
+            cout << "\nPLAYER 2 WIN!" << endl;
             end = true;
             }
         }
@@ -120,8 +122,8 @@ int p_choice()
     player = 1;
     while(end!=true)
     {
-    std::cout << "PLAYER " << player << ": ";
-    std::cin >> choice;
+    cout << "PLAYER " << player << ": ";
+    cin >> choice;
         if (choice>0 && choice<8)
         {
             check(choice);
@@ -137,7 +139,7 @@ int p_choice()
         }
     else
         {
-    std::cout << "PUT A NUMBER NEXT TIME!" << std::endl;
+    cout << "PUT A NUMBER NEXT TIME!" << endl;
         }
     win_check();
     }
@@ -147,7 +149,7 @@ int p_choice()
 int main()
 {
     system("CLS");
-    std::cout<<"WELCOME IN CONNECT 4"<<std::endl;
+    cout<<"WELCOME IN CONNECT 4"<<endl;
     draw();
     p_choice();
     return 0;
