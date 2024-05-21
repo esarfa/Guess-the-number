@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+	int num, guess, tries = 0;
+	srand(time(0)); //seed random number generator
+	num = rand() % 100 + 1; // random number between 1 and 100
+	cout << "Ghiceste numarul la care ma gandesc\n\n";
+
+	do
+	{
+		cout << "Introdu un numar intre 0 si 100 : ";
+		cin >> guess;
+		tries++;
+
+		if (guess > num)
+			cout << "Incearca un numar mai mic\n\n";
+		else if (guess < num)
+			cout << "Incearca un numar mai mare\n\n";
+		else
+			cout << "\nFelicitari! Ai ghicit in " << tries << " incercari!\n";
+	} while (guess != num);
+
+	return 0;
+}
