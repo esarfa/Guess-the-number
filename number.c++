@@ -4,7 +4,6 @@
 #include <ctime>
 using namespace std;
 
-
 int main(){
 int n=1;
 char input;
@@ -14,10 +13,8 @@ char input;
       _sleep(1000);
      cout << "Eu voi selecta un numar iar tu vei incerca sa il ghicesti." << endl;
        _sleep(1000);
-      cout << "Daca raspunzi corect primesti un punct,daca gresesti primesc eu un punct." << endl;
-        _sleep(1000);
-      cout << "Daca tu faci 5 puncte ai castigat,daca eu fac 10 puncte inseamna ca EU am castigat." << endl<<endl;
-
+     cout<<"Daca faci mai mult de 10 greseli ai pierdut"<<endl;
+   
       cout<<"Jucam ?(Y/N)"<<endl;
       cin>>input;
       if (input=='y'||'Y'){
@@ -25,44 +22,37 @@ char input;
 	int num, guess, tries = 0,s=100,m=0;
 	srand(time(0)); //seed random number generator
 	num = rand() % 100 + 1; // random number between 1 and 100
-	cout << "Ghiceste numarul la care ma gandesc\n\n";
+	cout << "Ghiceste numarul la care ma gandesc"<<endl;
 
 	do
 	{
-		cout << "Introdu un numar intre"<<m<<"si"<<s<< ":";
+		cout << "Introdu un numar intre "<<m<<" si "<<s<< ":";
 		cin >> guess;
-		tries++;
-
-		if (guess > num)
-			{cout << "Incearca un numar mai mic\n\n";
+        if(guess>s)
+            cout<<"Nu ai voie"<<endl;
+		else if (guess > num)
+			{cout << "Incearca un numar mai mic"<<endl;
            s=guess;
-           if(guess>m)
-            cout<<"Nu ai voie";
+           tries++;
            }
+           if(guess<m)
+                cout<<"Nu ai voie"<<endl;
 		else if (guess < num)
-			{cout << "Incearca un numar mai mare\n\n";
+			{cout << "Incearca un numar mai mare"<<endl;
 			m=guess;
-			if(guess<s)
-                cout<<"nu ai voie";
+            tries++;
 			}
 		else
-			cout << "\nFelicitari! Ai ghicit in " << tries << " incercari!\n";
+			cout << "\nFelicitari! Ai ghicit in " << tries << " incercari!"<<endl;
 	} while (guess != num);
-
 	return 0;
 }
-
-
            break;
     }
-
     else{
         cout<<"La revedere"<<endl;
         break;
     }
-
-
-
 return 0;
 };
 }
