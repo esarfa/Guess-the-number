@@ -24,7 +24,7 @@ int dif;
     if(mod=='u')
     dif=9;
     else if(mod=='m')
-    dif=6;
+    dif=7;
     else if(mod=='d')
     dif=4;
 	int num, guess, tries = 0,s=100,m=0;
@@ -44,12 +44,12 @@ int dif;
         break;}
         if(guess>s)
             cout<<"Nu ai voie"<<endl;
-		else if (guess > num)
+		else if(guess > num)
 			{cout << "Incearca un numar mai mic"<<endl;
            s=guess;
            tries++;
            }
-           if(guess<m)
+           else if(guess<m)
                 cout<<"Nu ai voie"<<endl;
 		else if (guess < num)
 			{cout << "Incearca un numar mai mare"<<endl;
