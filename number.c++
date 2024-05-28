@@ -21,11 +21,11 @@ int dif;
     cout<<"Alege dificultate:"<<endl;
     cout<<"Pentru usor apasa u"<<endl<<"Pentru mediu apasa m"<<endl<<"Pentru dificil apasa d"<<endl;
     cin>>mod;
-    if(mod=='u')
+    if(mod=='u'||'U')
     dif=9;
-    else if(mod=='m')
+    else if(mod=='m'||'M')
     dif=7;
-    else if(mod=='d')
+    else if(mod=='d'||'D')
     dif=4;
 	int num, guess, tries = 0,s=100,m=0;
 	srand(time(0)); //seed random number generator
@@ -39,7 +39,7 @@ int dif;
 		cout << "Introdu un numar intre "<<m<<" si "<<s<< ":";
 		cin >> guess;
         if(tries==dif)
-        {cout<<"Ai pierdut!"<<endl;
+        {cout<<"Ai piertud!"<<endl;
         cout<<"Numarul a fost: "<<num;
         break;}
         if(guess>s)
