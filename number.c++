@@ -39,7 +39,7 @@ int dif;
 		cout << "Introdu un numar intre "<<m<<" si "<<s<< ":";
 		cin >> guess;
         if(tries==dif)
-        {cout<<"Ai piertud!"<<endl;
+        {cout<<"Ai pierdut!"<<endl;
         cout<<"Numarul a fost: "<<num;
         break;}
         if(guess>s)
