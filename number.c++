@@ -29,8 +29,8 @@ int diff=0;
     diff=4;
 
 	int num, guess, tries = 0,s=100,m=0;
-	srand(time(0)); //seed random number generator
-	num = rand() % 100 + 1; // random number between 1 and 100
+	srand(time(0)); 
+	num = rand() % 100 + 1; 
 	cout << "Ghiceste numarul la care ma gandesc"<<endl;
     _sleep(1000);
  cout<<"Daca faci mai mult de "<<diff+1<<" greseli ai pierdut."<<endl;
