@@ -24,7 +24,7 @@ int dif;
     if(mod=='u')
     dif=9;
     else if(mod=='m')
-    dif=7;
+    dif=6;
     else if(mod=='d')
     dif=4;
 	int num, guess, tries = 0,s=100,m=0;
