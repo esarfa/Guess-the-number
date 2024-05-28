@@ -16,29 +16,30 @@ char input;
       cout<<"Jucam ?(Y/N)"<<endl;
       cin>>input;
       if (input=='y'||'Y'){
-{char mod;
-int dif;
+{int mod;
+int diff=0;
     cout<<"Alege dificultate:"<<endl;
-    cout<<"Pentru usor apasa u"<<endl<<"Pentru mediu apasa m"<<endl<<"Pentru dificil apasa d"<<endl;
+    cout<<"Pentru usor apasa 1"<<endl<<"Pentru mediu apasa 2"<<endl<<"Pentru dificil apasa 3"<<endl;
     cin>>mod;
-    if(mod=='u'||'U')
-    dif=9;
-    else if(mod=='m'||'M')
-    dif=7;
-    else if(mod=='d'||'D')
-    dif=4;
+    if(mod==1)
+    diff=9;
+    else if(mod==2)
+    diff=6;
+    else if(mod==3)
+    diff=4;
+
 	int num, guess, tries = 0,s=100,m=0;
 	srand(time(0)); //seed random number generator
 	num = rand() % 100 + 1; // random number between 1 and 100
 	cout << "Ghiceste numarul la care ma gandesc"<<endl;
     _sleep(1000);
- cout<<"Daca faci mai mult de "<<dif+1<<" greseli ai pierdut."<<endl;
+ cout<<"Daca faci mai mult de "<<diff+1<<" greseli ai pierdut."<<endl;
  _sleep(1000);
 	do
 	{
 		cout << "Introdu un numar intre "<<m<<" si "<<s<< ":";
 		cin >> guess;
-        if(tries==dif)
+        if(tries==diff)
         {cout<<"Ai pierdut!"<<endl;
         cout<<"Numarul a fost: "<<num;
         break;}
